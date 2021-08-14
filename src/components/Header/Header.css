@@ -1,0 +1,14 @@
+.header {
+	background-color: #6a0400;
+	/* border: 2px blue solid; */
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 65px;
+}
+
+.header .title {
+	/* border: 2px solid black; */
+	color: #ffd987;
+	font-size: 25px;
+}
