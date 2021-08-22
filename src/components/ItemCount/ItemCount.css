@@ -1,0 +1,19 @@
+.itemCount {
+	width: 300px;
+	border: 1px solid black;
+	margin-left: 20px;
+}
+
+.itemCountTop {
+	display: flex;
+	justify-content: space-between;
+}
+
+.itemCountBottom {
+	display: flex;
+	justify-content: center;
+}
+
+.addButton {
+	width: 100%;
+}
