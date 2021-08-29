@@ -8,7 +8,7 @@ const ItemListContainer = () => {
 				<li>Super Mario Odysee</li>
 				<li>The Legend of Zelda: Breath of the wild</li>
 			</ul>
-			<ItemList />
+			{/* <ItemList /> */}
 		</div>
 	);
 };

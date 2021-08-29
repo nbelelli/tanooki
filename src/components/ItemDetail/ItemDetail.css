@@ -1,0 +1,23 @@
+.itemDetail {
+	width: 170px;
+	/* height: 500px; */
+	border: 2px solid #6a0400;
+	/* border-radius: 5px; */
+}
+
+.infoWrapper {
+	margin-bottom: 10px;
+}
+
+.infoWrapper .title {
+	font-size: 20px;
+	padding: 2px 3px 3px 0;
+	text-align: center;
+}
+
+.infoWrapper .description {
+}
+
+.imageDetail {
+	max-width: 100%;
+}

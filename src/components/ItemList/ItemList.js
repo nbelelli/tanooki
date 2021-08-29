@@ -1,4 +1,4 @@
-import Item from './../Item/Item';
+import ItemDetail from '../ItemDetail/ItemDetail';
 import { useState } from 'react';
 import { useEffect } from 'react';
 

@@ -1,6 +1,7 @@
 .header {
 	background-color: #6a0400;
 	/* border: 2px blue solid; */
+
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
