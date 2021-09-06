@@ -1,17 +1,12 @@
 import './NavBar.css';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
 	return (
 		<nav className="navBar">
-			<a href="#" className="links">
-				Xbox
-			</a>
-			<a href="#" className="links">
-				Playstation
-			</a>
-			<a href="#" className="links">
-				Nintendo Switch
-			</a>
+			<Link to="/category/1">Xbox</Link>
+			<Link to="/category/2">Playstation</Link>
+			<Link to="/category/3">Nintendo Switch</Link>
 		</nav>
 	);
 }

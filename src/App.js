@@ -3,21 +3,20 @@ import Header from './components/Header/Header';
 import ItemListContainer from './components/ItemListContainer/ItemListCointainer';
 import ItemCount from './components/ItemCount/ItemCount';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
 	return (
-		<>
+		<BrowserRouter>
 			<Header />
-			<ItemListContainer />
-			{/* 			<ItemCount
-				stock={5}
-				onAdd={(count) => {
-					console.log(count);
-				}}
-				initial={1}
-			/> */}
-			<ItemDetailContainer />
-		</>
+			<main className="main">
+				<Switch>
+					<Route path="/" component={ItemListContainer} exact />
+					<Route path="/item/:id" component={ItemDetailContainer} />
+					<Route path="/category/:id" component={ItemListContainer} />
+				</Switch>
+			</main>
+		</BrowserRouter>
 	);
 }
 

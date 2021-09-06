@@ -1,10 +1,18 @@
-const Item = ({ id, title, description, price, platform }) => {
+import './Item.css';
+
+const Item = ({ id, title, description, price, platform, pictureUrl }) => {
 	return (
 		<>
-			<div>{title}</div>
-			<div>{platform}</div>
-			<div>{description}</div>
-			<div>${price}</div>
+			<div className="itemDetail">
+				<div className="infoWrapper">
+					<div className="imgWrapper">
+						<img className="imageDetail" src={pictureUrl} />
+					</div>
+					<div className="title">{title}</div>
+
+					<div className="price">${price}</div>
+				</div>
+			</div>
 		</>
 	);
 };
