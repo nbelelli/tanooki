@@ -10,13 +10,16 @@ const ItemDetail = ({
 }) => {
 	return (
 		<div className="itemDetail">
+			<div className="imgWrapper">
+				<img className="imageDetail" src={pictureUrl} />
+			</div>
 			<div className="infoWrapper">
 				<div className="title">{title}</div>
 				<div className="description">{description}</div>
-				<div>${price}</div>
 			</div>
-			<div className="imgWrapper">
-				<img className="imageDetail" src={pictureUrl} />
+			<div className="buyWrapper">
+				<div className="price">${price}</div>
+				<button className="buyButton">Comprar</button>
 			</div>
 		</div>
 	);

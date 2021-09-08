@@ -1,4 +1,4 @@
-.itemDetail {
+.item {
 	width: 170px;
 	height: 380px;
 	margin-bottom: 30px;
@@ -7,11 +7,9 @@
 	border-radius: 5px;
 }
 
-.itemDetail :hover {
-}
-
-.itemDetail .infoWrapper {
+.item .infoWrapper {
 	margin-bottom: 10px;
+	padding: 5px;
 }
 
 .infoWrapper .title {
