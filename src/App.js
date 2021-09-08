@@ -4,6 +4,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListCointainer
 import ItemCount from './components/ItemCount/ItemCount';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 					<Route path="/category/:id" component={ItemListContainer} />
 				</Switch>
 			</main>
+			<Footer />
 		</BrowserRouter>
 	);
 }
