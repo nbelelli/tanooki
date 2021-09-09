@@ -60,7 +60,7 @@ const loadProducts = new Promise((res, rej) => {
 			},
 			{
 				id: '6',
-				title: 'The Legend of Zelda: Breath of the Wild',
+				title: 'Breath of the Wild',
 				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 				price: '8000',
 				platform: 'Nintendo Switch',

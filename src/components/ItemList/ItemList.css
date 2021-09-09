@@ -1,5 +1,9 @@
 .itemList {
 	display: flex;
 	flex-wrap: wrap;
-	/* justify-content: space-around; */
+	/* 	justify-content: center;
+ */
+	width: 100%;
+	/* 	border: 2px solid black;
+ */
 }
