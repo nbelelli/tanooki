@@ -1,6 +1,7 @@
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({
 	id,
@@ -13,6 +14,7 @@ const ItemDetail = ({
 	const [count, setCount] = useState(0);
 
 	const onAdd = (count) => {
+		console.log('ejecuto ON ADD con ', count);
 		setCount(count);
 	};
 
@@ -28,9 +30,17 @@ const ItemDetail = ({
 			<div className="buyWrapper">
 				<div className="price">${price}</div>
 				{/* <button className="buyButton">Comprar</button> */}
-				<ItemCount stock={5} initial={1} onAdd={onAdd} />
+
+				{count < 1 ? (
+					<ItemCount stock={5} initial={1} onAdd={onAdd} />
+				) : (
+					<Link to="/cart">
+						<button>Finalizar Compra</button>
+					</Link>
+				)}
+				{/* <ItemCount stock={5} initial={1} onAdd={onAdd} /> */}
 			</div>
-			<div>usted va a comprar {count} productos</div>
+			{/* <div>usted va a comprar {count} productos</div> */}
 		</div>
 	);
 };
