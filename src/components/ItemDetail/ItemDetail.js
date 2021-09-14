@@ -1,4 +1,6 @@
 import './ItemDetail.css';
+import ItemCount from '../ItemCount/ItemCount';
+import { useState } from 'react';
 
 const ItemDetail = ({
 	id,
@@ -8,6 +10,12 @@ const ItemDetail = ({
 	pictureUrl,
 	platforms,
 }) => {
+	const [count, setCount] = useState(0);
+
+	const onAdd = (count) => {
+		setCount(count);
+	};
+
 	return (
 		<div className="itemDetail">
 			<div className="imgWrapper">
@@ -19,8 +27,10 @@ const ItemDetail = ({
 			</div>
 			<div className="buyWrapper">
 				<div className="price">${price}</div>
-				<button className="buyButton">Comprar</button>
+				{/* <button className="buyButton">Comprar</button> */}
+				<ItemCount stock={5} initial={1} onAdd={onAdd} />
 			</div>
+			<div>usted va a comprar {count} productos</div>
 		</div>
 	);
 };

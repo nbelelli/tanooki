@@ -1,8 +1,22 @@
 import { useState } from 'react';
 import './ItemCount.css';
+import { Link } from 'react-router-dom';
+
+const AddBtn = () => {
+	return <button>Agregar al carrito</button>;
+};
+
+const BuyBtn = () => {
+	return (
+		<Link to="/cart">
+			<button>Finalizar Compra</button>
+		</Link>
+	);
+};
 
 const ItemCount = ({ stock, initial, onAdd }) => {
-	let [count, setCount] = useState(initial);
+	const [count, setCount] = useState(initial);
+	const [btnType, setBtnType] = useState('add');
 
 	const sumar = () => {
 		if (count < stock) {
@@ -14,10 +28,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 		setCount(count - 1);
 	};
 
-	const agregar = () => {
-		if (stock > 0) {
-			onAdd(count);
-		}
+	const handleClick = () => {
+		setBtnType('buy');
+		onAdd(count);
 	};
 
 	if (stock > 0) {
@@ -28,10 +41,15 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 					<div>{count}</div>
 					<button onClick={sumar}>+</button>
 				</div>
-				<div className="itemCountBottom">
-					<button className="addButton" onClick={agregar}>
-						Agregar
-					</button>
+
+				<div className="itemCountBottom" onClick={handleClick}>
+					{btnType === 'add' ? (
+						<>
+							<AddBtn />
+						</>
+					) : (
+						<BuyBtn />
+					)}
 				</div>
 			</div>
 		);
