@@ -29,7 +29,6 @@ const ItemDetail = ({
 			</div>
 			<div className="buyWrapper">
 				<div className="price">${price}</div>
-				{/* <button className="buyButton">Comprar</button> */}
 
 				{count < 1 ? (
 					<ItemCount stock={5} initial={1} onAdd={onAdd} />
@@ -38,7 +37,6 @@ const ItemDetail = ({
 						<button>Finalizar Compra</button>
 					</Link>
 				)}
-				{/* <ItemCount stock={5} initial={1} onAdd={onAdd} /> */}
 			</div>
 			{/* <div>usted va a comprar {count} productos</div> */}
 		</div>

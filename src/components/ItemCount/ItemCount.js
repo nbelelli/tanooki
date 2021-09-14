@@ -9,7 +9,7 @@ const AddBtn = () => {
 const BuyBtn = () => {
 	return (
 		<Link to="/cart">
-			<button>Finalizar Compra</button>
+			<button>Finalizar Compra 2</button>
 		</Link>
 	);
 };
@@ -43,13 +43,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 				</div>
 
 				<div className="itemCountBottom" onClick={handleClick}>
-					{btnType === 'add' ? (
-						<>
-							<AddBtn />
-						</>
-					) : (
-						<BuyBtn />
-					)}
+					<AddBtn />
 				</div>
 			</div>
 		);
