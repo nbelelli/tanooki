@@ -1,7 +1,8 @@
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { context } from '../../CartContext/CartContext';
 
 const ItemDetail = ({
 	id,
@@ -11,11 +12,22 @@ const ItemDetail = ({
 	pictureUrl,
 	platforms,
 }) => {
+	const { cart, addProduct, removeProduct } = useContext(context);
+	console.log('los productos', cart);
 	const [count, setCount] = useState(0);
 
 	const onAdd = (count) => {
-		console.log('ejecuto ON ADD con ', count);
+		const formattedProd = {
+			id: id,
+			title: title,
+			description: description,
+			price: price,
+			pictureUrl: pictureUrl,
+			platforms: platforms,
+			count: count,
+		};
 		setCount(count);
+		addProduct(formattedProd.id, formattedProd.title, formattedProd.count);
 	};
 
 	return (

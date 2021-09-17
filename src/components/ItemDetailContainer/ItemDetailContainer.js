@@ -111,6 +111,7 @@ const ItemDetailContainer = () => {
 				platform={platform}
 				category_id={category_id}
 				pictureUrl={pictureUrl}
+				id={id}
 			/>
 		</>
 	);

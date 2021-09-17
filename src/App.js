@@ -6,20 +6,23 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Cart from './components/Cart/Cart';
+import CustomProvider from './CartContext/CartContext';
 
 function App() {
 	return (
 		<BrowserRouter>
-			<Header />
-			<main className="main">
-				<Switch>
-					<Route path="/" component={ItemListContainer} exact />
-					<Route path="/item/:id" component={ItemDetailContainer} />
-					<Route path="/category/:id" component={ItemListContainer} />
-					<Route path="/cart" component={Cart} />
-				</Switch>
-			</main>
-			<Footer />
+			<CustomProvider>
+				<Header />
+				<main className="main">
+					<Switch>
+						<Route path="/" component={ItemListContainer} exact />
+						<Route path="/item/:id" component={ItemDetailContainer} />
+						<Route path="/category/:id" component={ItemListContainer} />
+						<Route path="/cart" component={Cart} />
+					</Switch>
+				</main>
+				<Footer />
+			</CustomProvider>
 		</BrowserRouter>
 	);
 }
