@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { context } from '../../CartContext/CartContext';
 
 const CartWidget = () => {
@@ -6,9 +7,9 @@ const CartWidget = () => {
 
 	return (
 		<>
-			<a href="#" className="material-icons">
+			<Link to="/cart" className="material-icons">
 				shopping_cart
-			</a>
+			</Link>
 			<div>{cart.length}</div>
 		</>
 	);
