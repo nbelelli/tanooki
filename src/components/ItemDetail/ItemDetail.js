@@ -50,7 +50,6 @@ const ItemDetail = ({
 					</Link>
 				)}
 			</div>
-			{/* <div>usted va a comprar {count} productos</div> */}
 		</div>
 	);
 };
