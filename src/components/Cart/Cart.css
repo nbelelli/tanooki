@@ -1,0 +1,26 @@
+.cart {
+	display: flex;
+	flex-direction: column;
+	width: 25%;
+}
+
+.cartList {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cartItem {
+	margin-bottom: 20px;
+	margin-right: 20px;
+}
+
+.cartItemTitle {
+	font-size: 20px;
+}
+
+.cartItemDelete {
+	height: 40px;
+}
+
+.cartItemDelete {
+}
