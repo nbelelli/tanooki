@@ -11,6 +11,9 @@ const CartWidget = () => {
 		Q = Q + cart[i].quantity;
 	}
 
+	if (cart.length === 0) {
+		return <></>;
+	}
 	return (
 		<div className="cartWidget">
 			<Link to="/cart" className="material-icons">
