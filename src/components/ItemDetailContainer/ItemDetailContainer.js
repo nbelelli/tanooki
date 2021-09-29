@@ -2,16 +2,9 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router';
+import { firestore } from '../../firebase';
 
-import psycho2 from './../../images/psycho2.jpg';
-import botw from './../../images/botw.jpg';
-import farcry5 from './../../images/farcry5.jpg';
-import gears5 from './../../images/gears5.jpg';
-import mario from './../../images/mario.jpg';
-import residentevil2 from './../../images/residentevil2.jpg';
-import hades from './../../images/hades.jpg';
-
-const loadProducts = new Promise((res, rej) => {
+/* const loadProducts = new Promise((res, rej) => {
 	setTimeout(() => {
 		const result = [
 			{
@@ -80,25 +73,22 @@ const loadProducts = new Promise((res, rej) => {
 		];
 		res(result);
 	}, 2000);
-});
+}); */
 
 const ItemDetailContainer = () => {
 	const { id } = useParams();
 	const [product, setProduct] = useState({});
 
 	useEffect(() => {
-		loadProducts.then((products) => {
-			setProduct(
-				products.find((products) => {
-					return products.id == id;
-				})
-			);
-		});
+		const db = firestore;
+		db.collection('products')
+			.doc(id)
+			.get()
+			.then((snapshot) => {
+				setProduct(snapshot.data());
+			});
 	}, [id]);
 
-	/* 	const foundProduct = products.find((product) => {
-		return product.id == id;
-	}); */
 	const { title, description, price, platform, category_id, pictureUrl } =
 		product;
 

@@ -3,14 +3,6 @@ import ItemList from './../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import { firestore } from '../../firebase';
 
-import psycho2 from './../../images/psycho2.jpg';
-import botw from './../../images/botw.jpg';
-import farcry5 from './../../images/farcry5.jpg';
-import gears5 from './../../images/gears5.jpg';
-import mario from './../../images/mario.jpg';
-import residentevil2 from './../../images/residentevil2.jpg';
-import hades from './../../images/hades.jpg';
-
 /* const loadProducts = new Promise((res, rej) => {
 	setTimeout(() => {
 		const result = [
@@ -89,7 +81,11 @@ const ItemListContainer = () => {
 	useEffect(() => {
 		const db = firestore;
 		const collection = firestore.collection('products');
-		const query = collection.get();
+		/* const query = collection.get(); */
+
+		const query = id
+			? collection.where('category_id', '==', id)
+			: collection.get();
 
 		query
 			.then((snapshot) => {
@@ -109,7 +105,7 @@ const ItemListContainer = () => {
 			});
 	}, [id]);
 
-	if (id) {
+	/* 	if (id) {
 		const filteredProducts = products.filter((product) => {
 			return product.category_id == id;
 		});
@@ -124,7 +120,12 @@ const ItemListContainer = () => {
 				<ItemList products={products} />
 			</>
 		);
-	}
+	} */
+	return (
+		<>
+			<ItemList products={products} />
+		</>
+	);
 };
 
 export default ItemListContainer;
