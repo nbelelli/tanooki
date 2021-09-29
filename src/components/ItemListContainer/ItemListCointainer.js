@@ -81,21 +81,19 @@ const ItemListContainer = () => {
 	useEffect(() => {
 		const db = firestore;
 		const collection = firestore.collection('products');
-		/* const query = collection.get(); */
 
 		const query = id
-			? collection.where('category_id', '==', id)
+			? collection.where('category_id', '==', id).get()
 			: collection.get();
 
 		query
 			.then((snapshot) => {
 				const docs = snapshot.docs;
-
 				const products = [];
-
 				docs.forEach((doc) => {
 					const docSnapshot = doc;
 					const product_with_id = { ...docSnapshot.data(), id: docSnapshot.id };
+					console.log('product being', docSnapshot.data());
 					products.push(product_with_id);
 				});
 				setProducts(products);
