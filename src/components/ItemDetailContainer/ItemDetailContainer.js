@@ -85,7 +85,8 @@ const ItemDetailContainer = () => {
 			.doc(id)
 			.get()
 			.then((snapshot) => {
-				setProduct(snapshot.data());
+				const theProduct = { ...snapshot.data(), id: id };
+				setProduct(theProduct);
 			});
 	}, [id]);
 
