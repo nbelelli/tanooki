@@ -4,26 +4,13 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { context } from '../../CartContext/CartContext';
 
-const ItemDetail = ({
-	id,
-	title,
-	description,
-	price,
-	pictureUrl,
-	platforms,
-}) => {
+const ItemDetail = ({ product }) => {
 	const { cart, addProduct, removeProduct } = useContext(context);
-	console.log('los productos', cart);
 	const [count, setCount] = useState(0);
 
 	const onAdd = (count) => {
 		const formattedProd = {
-			id: id,
-			title: title,
-			description: description,
-			price: price,
-			pictureUrl: pictureUrl,
-			platforms: platforms,
+			...product,
 			count: count,
 		};
 		setCount(count);
@@ -33,14 +20,14 @@ const ItemDetail = ({
 	return (
 		<div className="itemDetail">
 			<div className="imgWrapper">
-				<img className="imageDetail" src={pictureUrl} />
+				<img className="imageDetail" src={product.pictureUrl} />
 			</div>
 			<div className="infoWrapper">
-				<div className="title">{title}</div>
-				<div className="description">{description}</div>
+				<div className="title">{product.title}</div>
+				<div className="description">{product.description}</div>
 			</div>
 			<div className="buyWrapper">
-				<div className="price">${price}</div>
+				<div className="price">${product.price}</div>
 
 				{count < 1 ? (
 					<ItemCount stock={5} initial={1} onAdd={onAdd} />
