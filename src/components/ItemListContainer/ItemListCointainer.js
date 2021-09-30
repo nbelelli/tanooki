@@ -83,7 +83,7 @@ const ItemListContainer = () => {
 		const collection = firestore.collection('products');
 
 		const query = id
-			? collection.where('category_id', '==', id).get()
+			? collection.where('category_id', '==', parseInt(id)).get()
 			: collection.get();
 
 		query
