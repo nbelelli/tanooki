@@ -3,14 +3,6 @@ import Item from '../Item/Item';
 import { Link } from 'react-router-dom';
 import './../ItemList/ItemList.css';
 
-import psycho2 from './../../images/psycho2.jpg';
-import botw from './../../images/botw.jpg';
-import farcry5 from './../../images/farcry5.jpg';
-import gears5 from './../../images/gears5.jpg';
-import mario from './../../images/mario.jpg';
-import residentevil2 from './../../images/residentevil2.jpg';
-import hades from './../../images/hades.jpg';
-
 const ItemList = ({ products }) => {
 	return (
 		<>
