@@ -1,3 +1,10 @@
+.cartPage {
+	display: flex;
+}
+
+.buyerForm {
+	margin-left: 60px;
+}
 .cart {
 	display: flex;
 	flex-direction: column;
