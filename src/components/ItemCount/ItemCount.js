@@ -9,7 +9,7 @@ const AddBtn = () => {
 const BuyBtn = () => {
 	return (
 		<Link to="/cart">
-			<button>Finalizar Compra 2</button>
+			<button>Finalizar Compra</button>
 		</Link>
 	);
 };
@@ -25,7 +25,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 	};
 
 	const restar = () => {
-		setCount(count - 1);
+		if (count > 1) {
+			setCount(count - 1);
+		}
 	};
 
 	const handleClick = () => {
