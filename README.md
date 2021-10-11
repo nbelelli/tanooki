@@ -11,3 +11,5 @@ Para instalar el proyecto, correr el comando 'npm install' en la consola
 Para levantar el proyecto en el puerto 3000, correr el comando 'npm start'
 
 # Recorrido para la realizacion de una compra:
+
+![](https://firebasestorage.googleapis.com/v0/b/tanooki-32665.appspot.com/o/compra.gif?alt=media&token=f85295d8-8fc4-4327-9ffd-57340933987f)
