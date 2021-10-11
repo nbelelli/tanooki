@@ -10,8 +10,6 @@ const Cart = () => {
 	const [lName, setLname] = useState('');
 	const [email, setEmail] = useState('');
 
-	console.log('el carrito', cart);
-
 	const submitOrder = () => {
 		const user = {
 			name: name,
@@ -28,9 +26,7 @@ const Cart = () => {
 	};
 
 	const saveName = (e) => {
-		console.log('saving the name');
 		setName(e.target.value);
-		console.log(name);
 	};
 	const saveLastName = (e) => {
 		setLname(e.target.value);
@@ -49,6 +45,7 @@ const Cart = () => {
 			</>
 		);
 	}
+
 	return (
 		<div className="cartPage">
 			<div className="cart">
